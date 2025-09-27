@@ -1,8 +1,11 @@
 extends CharacterBody2D
 
 
-var SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+const MAX_JUMPS = 2
+
+var jump_count = 0
+var SPEED = 300.0
 var sprint_factor = 1.0 
 var dashspeed = 4.0
 var is_dashing = false
@@ -13,8 +16,12 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and jump_count < MAX_JUMPS:
 		velocity.y = JUMP_VELOCITY
+		jump_count += 1
+	
+	if is_on_floor():
+		jump_count = 0
 	
 	#Handle the sprint
 
