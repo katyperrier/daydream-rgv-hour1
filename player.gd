@@ -9,11 +9,12 @@ var SPEED = 300.0
 var sprint_factor = 1.0 
 var dashspeed = 4.0
 var is_dashing = false
-var diaganol_move = Vector2(600,-600)
+var glide_target_position: Vector2
 var is_gliding = false
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() and not is_gliding:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
@@ -26,12 +27,17 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("grapple"):
 		is_gliding = true
-	
-	if is_gliding:
-		velocity = velocity.lerp(diaganol_move, 0.1)
+		queue_redraw()
 		
-		if velocity.distance_to(diaganol_move) < 5:
+		glide_target_position = global_position + Vector2(400,-400)
+		
+	if is_gliding:
+		var to_target = (glide_target_position - global_position).normalized()
+		velocity = to_target * 300
+		if global_position.distance_to(glide_target_position) < 10:
 			is_gliding = false
+			velocity = Vector2.ZERO
+			queue_redraw()
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -58,3 +64,8 @@ func startdash():
 
 func stopdash():
 	is_dashing = false
+	
+func _draw() -> void:
+	if is_gliding:
+		draw_line(Vector2.ZERO, to_local(glide_target_position), Color.WHITE, 2.0)
+	
