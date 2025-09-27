@@ -1,6 +1,5 @@
-AnimatedSprite2D
+Timer
 CollisionShape2D
 Marker2D
 MeshInstance2D
 Area2D
-Timer
