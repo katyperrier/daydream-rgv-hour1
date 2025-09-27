@@ -1,5 +1,6 @@
 63f7b34db8d8cdea90c76aacccf841ec
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ::res://::1759006133
 brown.png::CompressedTexture2D::625652041828059644::1759002873::1759002881::1::::<><><>0<>0<>2a5d381496372248bead70466598f1f8<>res://.godot/imported/brown.png-6d1cf59c92cb080fb76ca42725f3d38b.ctex::
 clay.png::CompressedTexture2D::625673032130028299::1759006133::1759006133::1::::<><><>0<>0<>9d2d58132b352fa4d495d35dff535a18<>res://.godot/imported/clay.png-7a40c50192b58253050c4a9c6542550e.ctex::
@@ -14,9 +15,14 @@ icon.svg::CompressedTexture2D::189389156191403838::1759000067::1759000067::1::::
 main.tscn::PackedScene::2936409571960462055::1759006041::0::1::::<><><>0<>0<><>::uid://c6mmvyjv4w5aj::::res://player.gd<>uid://cx0hg06ua24y::::res://icon.svg<>uid://b8344cudcmmfw::::res://green.png<>uid://4fgoahplvm78::::res://grey.png<>uid://i6cnr08s4v3i::::res://brown.png
 player.gd::GDScript::6974235434256563937::1759005427::0::1::::<>CharacterBody2D<><>0<>0<><>::
 =======
+=======
+>>>>>>> Stashed changes
 ::res://::1759000092
 green.png::CompressedTexture2D::4762267817757566160::1759000067::1759000067::1::::<><><>0<>0<>c69161bba3ea09d8c9a95e620b12646f<>res://.godot/imported/green.png-5db815cc8219d4fb24db6968e2796f87.ctex::
 icon.svg::CompressedTexture2D::189389156191403838::1759000067::1759000067::1::::<><><>0<>0<>ef3c0f0304a194f5f74b3ba85d1f5771<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 main.tscn::PackedScene::2936409571960462055::1759000067::0::1::::<><><>0<>0<><>::uid://c6mmvyjv4w5aj::::res://player.gd<>uid://cx0hg06ua24y::::res://icon.svg<>uid://b8344cudcmmfw::::res://green.png
 player.gd::GDScript::6974235434256563937::1759000067::0::1::::<>CharacterBody2D<><>0<>0<><>::
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
