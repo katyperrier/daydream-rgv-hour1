@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://bh3oibsym45rf"]
+[gd_scene load_steps=33 format=4 uid="uid://bh3oibsym45rf"]
 
 [ext_resource type="Script" uid="uid://c6mmvyjv4w5aj" path="res://player.gd" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://i6c0jnwsng00" path="res://clay.png" id="2_4c57u"]
@@ -12,7 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://nr7tojg0sppr" path="res://dirt-2.png.png" id="8_efxa6"]
 [ext_resource type="Texture2D" uid="uid://diel1o5mwhwjo" path="res://dirt-3.png.png" id="9_dg77c"]
 [ext_resource type="Texture2D" uid="uid://o2p1cut1vmpc" path="res://dirt-4.png.png" id="10_ycdy4"]
-[ext_resource type="Script" uid="uid://ut5g4ytujvcl" path="res://area_2d.gd" id="13_ycdy4"]
+[ext_resource type="Script" path="res://area_2d.gd" id="13_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://b6b52hj85cw6g" path="res://portal-frames-1.png.png" id="14_yaehf"]
+[ext_resource type="Texture2D" uid="uid://bckvw7tjwm4hw" path="res://portal-frames-2.png.png" id="15_074og"]
+[ext_resource type="Texture2D" uid="uid://dxlrme65a0xxf" path="res://portal-frames-3.png.png" id="16_cegan"]
+[ext_resource type="Texture2D" uid="uid://bp52anh51hauu" path="res://portal-frames-4.png.png" id="17_82xsv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(50.5, 77.25)
@@ -8324,6 +8328,26 @@ sources/10 = SubResource("TileSetAtlasSource_w48qg")
 sources/12 = SubResource("TileSetAtlasSource_dg77c")
 sources/13 = SubResource("TileSetAtlasSource_ycdy4")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_yaehf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_yaehf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_074og")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_cegan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_82xsv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
 [sub_resource type="BoxMesh" id="BoxMesh_dg77c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ycdy4"]
@@ -8367,7 +8391,15 @@ rendering_quadrant_size = 32
 position = Vector2(3029, -1376)
 script = ExtResource("13_ycdy4")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+position = Vector2(293, -135.99998)
+scale = Vector2(0.25976563, 0.22949219)
+sprite_frames = SubResource("SpriteFrames_yaehf")
+frame = 3
+frame_progress = 0.41734526
+
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Area2D"]
+visible = false
 position = Vector2(303.99997, -100)
 scale = Vector2(115.250015, 113.74998)
 mesh = SubResource("BoxMesh_dg77c")
