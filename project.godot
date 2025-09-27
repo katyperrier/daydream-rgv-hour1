@@ -48,3 +48,4 @@ grapple={
 [rendering]
 
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.010558972, 0.15453738, 0.44744027, 1)
