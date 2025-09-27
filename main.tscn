@@ -8352,6 +8352,10 @@ position_smoothing_speed = 7.0
 wait_time = 0.4
 one_shot = true
 
+[node name="GrappleTimer" type="Timer" parent="player"]
+wait_time = 5.0
+one_shot = true
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-1, 0)
 scale = Vector2(3, 3)
@@ -8376,5 +8380,6 @@ position = Vector2(-2722, 1307)
 position = Vector2(304, -99)
 shape = SubResource("RectangleShape2D_ycdy4")
 
+[connection signal="timeout" from="player/GrappleTimer" to="player" method="_on_grapple_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

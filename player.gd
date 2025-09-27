@@ -25,19 +25,17 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		jump_count = 0
 		
-	if Input.is_action_just_pressed("grapple"):
+	if Input.is_action_just_pressed("grapple") and not is_gliding:
 		is_gliding = true
+		glide_target_position = global_position + Vector2(900,-900)
+		$GrappleTimer.start()
 		queue_redraw()
-		
-		glide_target_position = global_position + Vector2(400,-400)
+
 		
 	if is_gliding:
 		var to_target = (glide_target_position - global_position).normalized()
 		velocity = to_target * 300
-		if global_position.distance_to(glide_target_position) < 10:
-			is_gliding = false
-			velocity = Vector2.ZERO
-			queue_redraw()
+		
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -68,4 +66,8 @@ func stopdash():
 func _draw() -> void:
 	if is_gliding:
 		draw_line(Vector2.ZERO, to_local(glide_target_position), Color.WHITE, 2.0)
-	
+
+func _on_grapple_timer_timeout() -> void:
+	is_gliding = false
+	velocity = Vector2.ZERO
+	queue_redraw()
