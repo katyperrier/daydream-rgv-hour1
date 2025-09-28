@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://bh3oibsym45rf"]
+[gd_scene load_steps=35 format=4 uid="uid://bh3oibsym45rf"]
 
 [ext_resource type="Script" uid="uid://c6mmvyjv4w5aj" path="res://player.gd" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://i6c0jnwsng00" path="res://clay.png" id="2_4c57u"]
@@ -12,11 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://nr7tojg0sppr" path="res://dirt-2.png.png" id="8_efxa6"]
 [ext_resource type="Texture2D" uid="uid://diel1o5mwhwjo" path="res://dirt-3.png.png" id="9_dg77c"]
 [ext_resource type="Texture2D" uid="uid://o2p1cut1vmpc" path="res://dirt-4.png.png" id="10_ycdy4"]
-[ext_resource type="Script" path="res://area_2d.gd" id="13_ycdy4"]
+[ext_resource type="Script" uid="uid://ut5g4ytujvcl" path="res://area_2d.gd" id="13_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://b6b52hj85cw6g" path="res://portal-frames-1.png.png" id="14_yaehf"]
 [ext_resource type="Texture2D" uid="uid://bckvw7tjwm4hw" path="res://portal-frames-2.png.png" id="15_074og"]
 [ext_resource type="Texture2D" uid="uid://dxlrme65a0xxf" path="res://portal-frames-3.png.png" id="16_cegan"]
 [ext_resource type="Texture2D" uid="uid://bp52anh51hauu" path="res://portal-frames-4.png.png" id="17_82xsv"]
+[ext_resource type="Script" uid="uid://dgpkvxmxvlqu7" path="res://respawn_area.gd" id="18_074og"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(50.5, 77.25)
@@ -8353,6 +8354,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ycdy4"]
 size = Vector2(128, 125.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cegan"]
+size = Vector2(829, 298)
+
 [node name="Node" type="Node"]
 
 [node name="player" type="CharacterBody2D" parent="."]
@@ -8411,6 +8415,15 @@ position = Vector2(-2722, 1307)
 position = Vector2(304, -99)
 shape = SubResource("RectangleShape2D_ycdy4")
 
+[node name="RespawnArea" type="Area2D" parent="."]
+position = Vector2(724, 819)
+script = ExtResource("18_074og")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RespawnArea"]
+position = Vector2(280.5, 241)
+shape = SubResource("RectangleShape2D_cegan")
+
 [connection signal="timeout" from="player/GrappleTimer" to="player" method="_on_grapple_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="RespawnArea" to="player" method="_on_respawn_area_body_entered"]

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var marker_2d: Marker2D = %Marker2D
 
 const JUMP_VELOCITY = -450.0
 const MAX_JUMPS = 2
@@ -71,3 +72,7 @@ func _on_grapple_timer_timeout() -> void:
 	is_gliding = false
 	velocity = Vector2.ZERO
 	queue_redraw()
+
+
+func _on_respawn_area_body_entered(body: Node2D) -> void:
+	global_position = marker_2d.global_position
