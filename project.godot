@@ -15,6 +15,10 @@ run/main_scene="uid://bh3oibsym45rf"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://global.gd"
+
 [input]
 
 right={

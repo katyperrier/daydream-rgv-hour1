@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://nr7tojg0sppr" path="res://dirt-2.png.png" id="8_efxa6"]
 [ext_resource type="Texture2D" uid="uid://diel1o5mwhwjo" path="res://dirt-3.png.png" id="9_dg77c"]
 [ext_resource type="Texture2D" uid="uid://o2p1cut1vmpc" path="res://dirt-4.png.png" id="10_ycdy4"]
-[ext_resource type="Script" path="res://area_2d.gd" id="13_ycdy4"]
+[ext_resource type="Script" uid="uid://ut5g4ytujvcl" path="res://area_2d.gd" id="13_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://b6b52hj85cw6g" path="res://portal-frames-1.png.png" id="14_yaehf"]
 [ext_resource type="Texture2D" uid="uid://bckvw7tjwm4hw" path="res://portal-frames-2.png.png" id="15_074og"]
 [ext_resource type="Texture2D" uid="uid://dxlrme65a0xxf" path="res://portal-frames-3.png.png" id="16_cegan"]

@@ -13,5 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	print("test", body)
+	Global.portals_entered+=1
+	print(Global.portals_entered)
 	var tp_point = marker_2d.global_position
 	body.global_position = tp_point 
