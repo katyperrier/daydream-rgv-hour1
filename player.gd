@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		jump_count = 0
 		
-	if Input.is_action_just_pressed("grapple") and not is_gliding:
+	if Input.is_action_just_pressed("grapple") and not is_gliding and Global.portals_entered<1:
 		is_gliding = true
 		glide_target_position = global_position + Vector2(900,-900)
 		$GrappleTimer.start()
@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
 	
-	if Input.is_action_just_pressed("sprint"):
+	if Input.is_action_just_pressed("sprint") and Global.portals_entered<2:
 		if !is_dashing and direction:
 			startdash()
 	if not is_gliding:
